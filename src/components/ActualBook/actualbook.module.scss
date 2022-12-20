@@ -1,0 +1,184 @@
+@import '../../variables.scss';
+
+.actualBlock{
+    display: flex;
+    justify-content: center;
+    background-color:  $green-detail;
+    margin-bottom: 100px;
+}
+
+.currentBook{
+    @include wrapper;
+    position: relative;
+    display: flex;
+    img{
+        height: 500px;
+        position: relative;
+        top: 40px;
+        border-radius: 10px;
+    }
+
+    .book{
+        padding-top: 40px;
+        padding-left: 100px;
+
+        h4{
+            @include titles;
+            margin-bottom: 20px;
+        }
+
+        &Name{
+            margin-bottom: 5px;
+            color: $titles-color;
+            font-size: 3.3rem;
+        }
+        &Author{
+            font-size: 1.8rem;
+            color: #EAB57D;
+            margin-bottom: 30px;
+        }
+        &Description{
+            max-width: 650px;
+            margin-bottom: 20px;
+        }
+        button{
+            @include button;
+        }
+    }
+}
+
+@media(max-width:1200px){
+    .currentBook{
+        img{
+            height: 500px;
+            top: 40px;
+        }
+    
+        .book{
+            h4{
+                margin-bottom: 10px;
+            }
+    
+            &Name{
+                font-size: 3rem;
+            }
+            &Author{
+                font-size: 1.5rem;
+            }
+        }
+    }
+}
+
+@media(max-width:1024px){
+    .currentBook{
+        img{
+            height: 400px;
+            top: 50px;
+        }
+    
+        .book{
+            padding-top: 40px;
+            padding-left: 50px;
+            padding-bottom: 40px;
+    
+            h4{
+                margin-bottom: 10px;
+            }
+    
+            &Name{
+                font-size: 2.3rem;
+            }
+            &Author{
+                font-size: 1.2rem;
+                margin-bottom: 30px;
+            }
+            &Description{
+                max-width: 650px;
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
+
+@media(max-width:768px){
+    .actualBlock{
+        margin-bottom: 60px;
+    }
+    
+
+    .currentBook{
+        img{
+            height: 300px;
+            top: 40px;
+        }
+    
+        .book{
+            padding-top: 40px;
+            padding-left: 50px;
+            padding-bottom: 40px;
+    
+            h4{
+                margin-bottom: 10px;
+            }
+    
+            &Name{
+                font-size: 2rem;
+                margin-bottom: 0px;
+            }
+            &Author{
+                font-size: 1.1rem;
+                margin-bottom: 20px;
+            }
+            &Description{
+                max-width: 650px;
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
+
+@media(max-width:620px){
+    .currentBook{
+        img{
+            height: 270px;
+            top: 20px;
+        }
+    
+        .book{
+            padding-top: 40px;
+            padding-left: 20px;
+            padding-bottom: 40px;
+    
+            h4{
+                margin-bottom: 10px;
+            }
+    
+            &Name{
+                font-size: 1.8rem;
+                margin-bottom: 0px;
+            }
+            &Author{
+                font-size: 1.1rem;
+                margin-bottom: 20px;
+            }
+            &Description{
+                max-width: 650px;
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
+
+@media(max-width:500px){
+       
+    .currentBook{
+        flex-direction: column;
+        img{
+            margin: 0 auto 40px auto;
+            height: 380px;
+            top: 40px;
+        }
+    
+
+    }
+}

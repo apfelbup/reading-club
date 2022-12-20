@@ -1,0 +1,31 @@
+@import '../../variables.scss';
+
+.root{
+    margin-bottom: 100px;
+    display: flex;
+    justify-content: center;
+    li{
+        display: inline-flex;
+
+    }
+    a{
+        padding: 20px;
+        font-size: 1.5rem;
+        border: 1px solid #666;
+        border-radius: 100px;
+        margin-left: 10px;
+        cursor: pointer;
+        transition: all 0.2s;
+        &:hover{
+            color: $block-color;
+            border-color: $block-color;
+        }
+    }
+    
+}
+
+@media(max-width:768px){
+    .root{
+        margin-bottom: 60px;
+    }
+}

@@ -1,0 +1,442 @@
+@import '../../variables.scss';
+
+
+.memberBlock{
+    @include wrapper;
+    margin-bottom: 100px;
+    .membership{
+
+        background: url('../../../public/img/content/navigate1.jpg') no-repeat center center;
+        background-size: cover;
+        position: relative;
+        height:450px;
+        margin: 0 auto 30px auto;
+        border-radius: 20px;
+            p{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: 3.8rem;
+                color: $titles-color;
+            }
+            &:before {
+                border-radius: 20px;
+                content: '';
+                display: block;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color:rgba(0, 0, 0, .4);
+            }
+    }
+    .memberTitle{
+        h2{
+            @include titles;
+            color: $green-detail;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 3rem;
+        }
+        h3{
+            text-align: center;
+            font-size: 1.8rem;
+            &+&{
+                margin-top: 10px;
+            }
+
+        }
+    }
+}
+
+.about{
+    @include wrapper;
+    @include flex-between;
+    margin-bottom: 100px;
+    .info{
+        margin-right: 20px;
+        max-width: 800px;
+        div{
+            margin-bottom: 30px;
+            h4{
+                @include titles;
+                margin-bottom: 20px;
+            }
+            p{
+                margin-bottom: 10px;
+            }
+        }
+    }
+    img{
+        border-radius: 20px;
+    }
+}
+
+.howItWorks{
+    @include wrapper;
+    margin-bottom: 100px;
+    .title{
+        text-align: center;
+        font-size: 3rem;
+        font-weight: 600;
+        margin-bottom: 20px;
+    }
+    .block{
+        background-color: $green-detail;
+        border-radius: 20px;
+        div{
+            padding: 50px 80px;
+            h5{
+                @include titles;
+                color: $titles-color;
+                margin-bottom: 10px;
+                text-align: center;
+            }
+            p{
+                font-size: 1.3rem;
+                text-align: center;
+            }
+        }
+    }
+    .block+.block{
+        margin-top: 40px;
+    }
+}
+
+.membership {
+    padding: 80px;
+    background: url('../../../public/img/content/question.jpg') center center;
+    background-size: cover;
+    margin-bottom: 100px;
+
+    button{
+        cursor: pointer;
+        max-width: 900px;
+        margin: 0 auto;
+        width: 100%;
+        transition: all 0.3s;
+        font-weight: 600;
+        background: $block-color;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 60px 10px;
+        border-radius: 20px;
+        &:hover{
+            background: $titles-color;
+        }
+        p{
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI';
+            color: $font-color;
+            font-size: 2rem;
+            }
+    }
+
+}
+
+.questions{
+    margin-bottom: 100px;
+
+    .title{
+        font-size: 2.4rem;
+        font-weight: 600;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .block{
+        max-width: 1200px;
+        margin: 0 auto;
+        h4{
+            @include titles;
+            text-align: center;
+            margin-bottom: 10px;
+            color: $green-detail;
+        }
+        p{
+            text-align: center;
+        }
+    }
+
+    .block + .block{
+        margin-top: 50px;
+    }
+}
+
+
+@media(max-width:1200px){
+
+    .memberBlock{
+        .membership{
+            height:400px;
+                p{
+                    font-size: 3rem;
+                    color: $titles-color;
+                }
+        }
+        .memberTitle{
+            h2{
+                font-size: 3rem;
+            }
+            h3{
+                font-size: 1.4rem;
+            }
+        }
+    }
+
+    .about{
+        .info{
+            margin-right: 20px;
+            max-width: 800px;
+            div{
+                margin-bottom: 20px;
+                p{
+                    font-size: 1rem;
+                }
+            }
+        }
+        img{
+            border-radius: 20px;
+            max-width: 500px;
+            height: 100%;
+        }
+    }
+}
+
+@media(max-width:1024px){
+    .memberBlock{
+        .membership{
+            height:350px;
+                p{
+                    font-size: 2.5rem;
+                }
+        }
+        .memberTitle{
+            h2{
+                font-size: 2rem;
+            }
+            h3{
+                font-size: 1.3rem;
+            }
+        }
+    }
+    .about{
+        flex-direction: column-reverse;
+        .info{
+            margin-right: 0px;
+            max-width: 800px;
+            div{
+                margin-bottom: 20px;
+                h4{
+                    text-align: center;
+                }
+                p{
+                    font-size: 1rem;
+                }
+            }
+        }
+        img{
+            border-radius: 20px;
+            max-width: 500px;
+            height: 100%;
+            margin-bottom: 50px;
+        }
+    }
+
+    .howItWorks{
+        .title{
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        .block{
+            div{
+                p{
+                    font-size: 1rem;
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+
+    .membership {
+        padding: 80px;
+    
+        button{
+            max-width: 700px;
+            padding: 40px 10px;
+            p{
+                font-size: 1.5rem;
+                }
+        }
+    
+    }
+
+    .questions{
+    
+        .title{
+            font-size: 2rem;
+        }
+    }
+    
+}
+
+
+@media(max-width:768px){
+
+    .memberBlock{
+        margin-bottom: 60px;
+        .membership{
+            height:300px;
+            margin: 0 auto 20px auto;
+                p{
+                    font-size: 2rem;
+                }
+        }
+        .memberTitle{
+            h2{
+                font-size: 1.5rem;
+                margin-bottom: 10px;
+            }
+            h3{
+                font-size: 1rem;
+            }
+        }
+    }
+
+    .howItWorks{
+        .title{
+            font-size: 1.7rem;
+        }
+        margin-bottom: 60px;
+        .block{
+            div{
+                padding: 30px 50px;
+            }
+        }
+        .block+.block{
+            margin-top: 20px;
+        }
+    }
+
+    .membership {
+        padding: 60px;
+    
+        button{
+            max-width: 500px;
+            p{
+                font-size: 1.2rem;
+                }
+        }
+    
+    }
+
+    .questions{
+        margin-bottom: 60px;
+        .title{
+            font-size: 1.7rem;
+            margin-bottom: 20px;
+        }
+
+        
+        .block + .block{
+                margin-top: 25px;
+        }
+    }
+}
+
+@media(max-width:620px){
+    .memberBlock{
+        .membership{
+            height:200px;
+                p{
+                    font-size: 1.5rem;
+                }
+        }
+
+    }
+    .about{
+        margin-bottom: 60px;
+        img{
+            border-radius: 20px;
+            max-width: 400px;
+            height: 100%;
+            margin-bottom: 50px;
+        }
+    }
+
+    .howItWorks{
+        .block{
+            div{
+                padding: 20px;
+            }
+        }
+    }
+
+    .membership {
+        padding: 30px;
+    
+        button{
+            max-width: 700px;
+            padding: 40px 10px;
+        }
+    
+    }
+    .questions{
+        .title{
+            font-size: 1.5rem;
+        }
+    }
+}
+
+
+@media(max-width:420px){
+    .memberBlock{
+        .membership{
+                p{
+                    font-size: 1.1rem;
+                }
+        }
+
+    }
+    .about{
+        img{
+            border-radius: 20px;
+            max-width: 310px;
+            height: 100%;
+            margin-bottom: 30px;
+        }
+    }
+
+    .howItWorks{
+        .title{
+            font-size: 1.4rem;
+        }
+    }
+
+    .membership {
+        padding: 15px;
+    
+        button{
+            max-width: 700px;
+            padding: 40px 10px;
+            p{
+                font-size: 1rem;
+                }
+        }
+    
+    }
+
+    .questions{
+        .title{
+            font-size: 1.4rem;
+        }
+    }
+}

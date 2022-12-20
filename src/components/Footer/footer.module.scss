@@ -1,0 +1,92 @@
+@import '../../variables.scss';
+
+
+footer{
+    margin-top: auto;
+}
+.footer{
+    padding: 60px;
+    background-color: $block-color;
+    display: flex;
+    .block{
+        display: grid;
+        grid-auto-columns: 1fr;
+        grid-column-gap: 16px;
+        grid-row-gap: 16px;
+        -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+        -ms-grid-rows: auto auto;
+        grid-template-rows: auto auto;
+        ul{
+            list-style: none;
+            @include fontHeader;
+            li{
+                margin-bottom: 10px;
+                a{
+                    transition: all 0.3s;
+                    &:hover{
+                        opacity: 0.7;
+                    }
+                }
+
+            }
+        }
+
+        ul + ul {
+            margin-left: 50px;
+        }
+    }
+}
+
+
+@media(max-width:1024px){
+    .footer{
+        display: flex;
+        justify-content: space-between;
+        .block{
+            display: flex;
+            justify-content: space-around;
+            flex-direction: column;
+            ul{
+                li{
+                    margin-bottom: 10px;
+                }
+            }
+    
+            ul + ul {
+                margin-left: 0px;
+                margin-top: 20px;
+            }
+        }
+    }
+}
+
+@media(max-width:768px){
+    .footer{
+        padding: 40px 20px;
+        .block{
+            ul{
+                li{
+                    margin-bottom: 10px;
+                }
+            }
+    
+            ul + ul {
+                margin-left: 0px;
+                margin-top: 20px;
+            }
+        }
+    }
+    p{
+        font-size: 0.8rem;
+    }
+}
+
+@media(max-width:620px){
+    .footer{
+        flex-direction: column;
+    }
+    .block{
+        margin-bottom: 40px;
+    }
+}

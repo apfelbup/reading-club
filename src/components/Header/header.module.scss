@@ -1,0 +1,111 @@
+@import '../../variables.scss';
+
+header {
+    @include fontHeader;
+    background: $block-color;
+    padding: 0.5em 1.6em;
+    margin-bottom: 60px;
+
+    .headerWrapper{
+        @include flex-between;
+
+    }
+
+        .nav{@include flex-between;
+
+            a{
+                margin-left: 1.6em;
+                transition: all 0.4s;
+                &:hover{
+                    opacity: 0.7;
+                }
+            }
+            a:nth-child(1){
+                margin: 0em;
+                &:hover{
+                    opacity: 1;
+                }
+            }
+        }
+
+        .shelf{
+            display: flex;
+            button{
+                font-family: 'Comfortaa', cursive;
+                font-weight: 600;
+                color: $font-color;
+                margin-right: 30px;
+                cursor: pointer;
+                transition: all 0.2s;
+                &:hover{
+                    opacity: 0.8;
+                }
+
+            }
+            .bookMenu{
+                position: relative;
+                display: flex;
+                align-items: center;
+                p{
+                    cursor: pointer;
+                    margin-right: 5px;
+                }
+            }
+            ul{
+                display: flex;
+                flex-direction: column;
+                z-index: 20;
+                position: absolute;
+                right: 0%;
+                top:70px;
+                background: $titles-color;
+                padding: 10px 20px 30px 10px;
+                a{
+                    cursor: pointer;
+                    list-style: none;
+                    font-size: 1.1rem;
+                    &:hover{
+                        opacity: 0.8;
+                    }
+                }
+                a+a{
+                    margin-top: 10px;
+                }
+            }
+
+        }
+}
+
+
+@media(max-width:1200px){
+    header {
+            .nav{
+                a{
+                    margin-left: 1.4em;
+                }
+            }
+        }    
+}
+
+@media(max-width:1024px){
+    header {
+        margin-bottom: 40px;
+            .nav{
+                a{
+                    margin-left: 1.2em;
+                }
+            }
+        }    
+}
+
+@media(max-width:768px){  
+    header{
+        a,.shelf{
+            display: none;
+        }
+        .logo{
+            display: flex;
+        }
+    }
+
+}

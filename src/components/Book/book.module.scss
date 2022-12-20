@@ -1,0 +1,78 @@
+@import '../../variables.scss';
+
+.item{
+    position: relative;
+    max-width: 320px;
+    width: 100%;
+    min-height: 490px;
+    border: 1px solid $green-detail;
+    border-radius: 20px;
+    margin-bottom: 40px;
+    margin-right: 9px;
+    &:hover{
+        top: -10px;
+    }
+    div{
+        padding: 40px 20px;
+        .description{
+            padding-top: 20px;
+            max-height: 320px;
+            overflow-y: auto;
+        }
+        button{
+            @include button;
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translate(-50%,0%);
+        }
+        img{
+            display: flex;
+            justify-content: center;
+            height: 300px;
+            margin: 0 auto 20px auto;
+            border-radius: 20px;
+        }
+        h4{
+            color: $green-detail;
+            text-align: center;
+            font-size: 1.5rem;
+        }
+        .important{
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 40px;
+            height: 50px;
+            z-index: 24;
+            transition: all 0.2s;
+            fill:#fff; 
+            stroke:#000;
+            &:hover{
+                opacity: 0.7;
+            }
+        }
+    }
+}
+
+@media(max-width:1024px){
+    .item{
+        max-width: 400px;
+        width: 100%;
+    }
+}
+
+@media(max-width:855px){
+    .item{
+        max-width: 350px;
+        width: 100%;
+    }
+}
+
+@media(max-width:768px){
+    .item{
+        max-width: 400px;
+        width: 100%;
+    }
+}

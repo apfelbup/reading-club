@@ -1,0 +1,91 @@
+$font-color: #4F4A44;
+$titles-color: #F2DFB4;
+$block-color: #EAB57D;
+$green-detail: #8F9E81;
+
+$headerFont: 1.5rem;
+
+
+@mixin button {
+    font-family: 'Comfortaa', cursive;
+    border: none;
+    border-radius: 10px;
+    background-color: #4F4A44;
+    color: #F2DFB4;
+    transition: all 0.3s;
+    cursor: pointer;
+    padding: 20px 40px;
+    font-size: 1.2rem;
+    &:hover{
+        color: #8F9E81;
+        background-color: #F2DFB4;
+    }
+
+    @media(max-width:1024px){
+        padding: 20px 20px;
+        font-size: 1.1rem;
+    }
+    @media(max-width:768px){
+        padding: 20px;
+        font-size: 1rem;
+    }
+
+}
+
+@mixin inputStyles{
+        font-family: 'Comfortaa', cursive;
+        font-size: 1.2rem;
+        width: 100%;
+        margin-bottom: 20px;
+        padding: 20px;
+        border: none;
+        border-radius: 10px;
+
+        &:focus{
+            background-color: $block-color;
+            outline: none;
+        }
+
+        @media(max-width:768px){
+            font-size: 1rem;
+        }
+}
+
+@mixin flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin titles {
+    font-family: 'Pattaya', sans-serif;
+    font-size: 2.3rem;
+    @media(max-width:1200px){
+        font-size: 1.8rem;
+    }
+    @media(max-width:1024px){
+        font-size: 1.5rem;
+    }
+}
+
+@mixin fontHeader {
+    font-weight: 600;
+    font-size: 1.5rem;
+    @media(max-width:1200px){
+        font-size: 1.3rem;
+    }
+    @media(max-width:1024px){
+            font-size: 1.1rem; 
+    }
+}
+
+
+
+
+@mixin wrapper {
+    max-width: 1600px;
+    padding: 0 15px;
+    margin: 0 auto;
+
+}
+
