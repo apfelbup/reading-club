@@ -26,7 +26,7 @@ const Book = ({id,image,theme,description,title}:BookProps) => {
             title,
             theme
         }
-        addBook === true ? dispatch(addItem(book)):dispatch(removeItem(id)) ;
+        dispatch(addItem(book));
 
 
 

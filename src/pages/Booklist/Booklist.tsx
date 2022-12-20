@@ -5,6 +5,7 @@ import ReactPaginate from "react-paginate";
 import Pagination from "../../components/Pagination";
 import Book from "../../components/Book";
 import { title } from "process";
+import ActualBook from "../../components/ActualBook";
 
 
 interface BookListProps {
@@ -27,6 +28,7 @@ const Booklist = ({dataState}:BookListProps) => {
             <h3>Собираемся читать и изучать.</h3>
         </div>
         </div>
+        <ActualBook/>
         <div className={styles.bookitems}>
             {dataState?.map((item: { id: string; theme: string; image: string; description:string; title:string }) => 
             (<Book key={item.id} title={item.title} id={item.id} theme={item.theme} image={item.image} description={item.description}/>))}

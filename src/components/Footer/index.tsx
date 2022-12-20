@@ -18,7 +18,7 @@ const Footer = (windowScroll:any) => {
             </ul>
 
         </div>
-        <p> Booklab Book Club Ltd © 2020 - 2022</p>
+        <p> Booklab Book Club Ltd © 2021 - 2023</p>
     </footer>
     )
 }
