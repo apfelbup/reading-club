@@ -5,8 +5,10 @@ import SignUp from "../../components/SignUp";
 import { Link } from "react-router-dom";
 import ActualBook from "../../components/ActualBook";
 
-
-const MainPage = ({dataState}:any) => {
+interface MainPageProps {
+  isSuccess: ()=>void;
+}
+const MainPage = ({isSuccess}:MainPageProps) => {
     return(
       <div className={styles.main}>
       <h1 className={styles.mainTitle}>Здесь говорят <br/> о книгах</h1>
@@ -34,7 +36,7 @@ const MainPage = ({dataState}:any) => {
       </div>
       <ActualBook />
       <Navigate/>
-      <SignUp/>
+      <SignUp isSuccess={isSuccess}/>
       </div>
     )
 }

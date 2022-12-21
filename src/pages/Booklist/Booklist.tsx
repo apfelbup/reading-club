@@ -12,9 +12,10 @@ import { setCurrentPage } from "../../redux/slices/pagesSlice";
 
 
 interface BookListProps {
-    dataState:Array<any>
+    dataState:Array<any>;
+    isSuccess:()=>void;
 }
-const Booklist = ({dataState}:BookListProps) => {
+const Booklist = ({isSuccess,dataState}:BookListProps) => {
     
     const dispatch = useDispatch();
     const {currentPage} = useSelector((state:any)=> state.pages);
@@ -41,7 +42,7 @@ const Booklist = ({dataState}:BookListProps) => {
             (<Book key={item.id} title={item.title} id={item.id} theme={item.theme} image={item.image} description={item.description}/>))}
         </div>
         <Pagination currentPage={currentPage} onChangePage={onChangePage}/>
-        <SignUp/>
+        <SignUp isSuccess={isSuccess}/>
     </div>
     )
 }

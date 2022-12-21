@@ -4,9 +4,10 @@ import SignUp from "../../components/SignUp";
 
 interface ClubProps {
     popupHandler: ()=> void;
+    isSuccess: ()=> void;
 }
 
-const Club = ({popupHandler}:ClubProps) => {
+const Club = ({isSuccess,popupHandler}:ClubProps) => {
     return(
     <div className={styles.club}>
         <div className={styles.memberBlock}>
@@ -87,7 +88,7 @@ const Club = ({popupHandler}:ClubProps) => {
             <p>Конечно. Вы можете пропустить месяц, заморозив подписку, или вовсе отключить её в любой момент.</p>
         </div>
       </div>
-        <SignUp/>
+        <SignUp isSuccess={isSuccess}/>
     </div>
     )
 }

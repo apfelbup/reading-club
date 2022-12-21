@@ -4,12 +4,11 @@ import { Link } from "react-router-dom";
 
 
 interface HeaderProps {
-    menuHandler: ()=> void;
-    menu: boolean;
+    popupHandler:()=> void;
 }
 
 
-const Header = ({menuHandler,menu}:HeaderProps) => {
+const Header = ({popupHandler}:HeaderProps) => {
     return(
     <header>
         <div className={styles.headerWrapper}>
@@ -21,7 +20,7 @@ const Header = ({menuHandler,menu}:HeaderProps) => {
 
         </nav>
         <div className={styles.shelf}>
-            <button > Присоединиться </button>
+            <button onClick={popupHandler} > Присоединиться </button>
             <Link to="/shelf">Моя полка</Link>
             </div>
         </div>

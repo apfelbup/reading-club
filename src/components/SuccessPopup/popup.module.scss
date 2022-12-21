@@ -1,0 +1,116 @@
+@import '../../variables.scss';
+
+.popup{
+    overflow: hidden;
+    position: fixed;
+    z-index: 20;
+    background: center center no-repeat;
+    background-color:rgba(0,0,0,0.7);
+    background-size: cover;
+    height:100vh;
+    width:  100vw;
+
+    .block{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        transform: translate(-50%, -50%);
+        padding: 50px;
+        border-radius: 20px;
+        background-color: $green-detail;
+        max-width: 1000px;
+        margin: 0 auto;
+
+        .close{
+            position: absolute;
+            right: 30px;
+            top: 20px;
+            font-size: 1.6rem;
+            cursor: pointer;
+            color: $font-color;
+        }
+
+        p{
+            font-size: 2rem;
+            text-align: center;
+            font-weight: 600;
+            margin-bottom: 50px;
+        }
+
+        form{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            input{
+                @include inputStyles;
+                max-width: 600px;
+            }
+
+            button{
+                max-width: 600px;
+                width: 100%;
+                @include button;
+            }
+        }
+    }
+}
+
+@media(max-width:1200px){
+    .popup{
+        .block{
+            max-width: 800px;
+        }
+}
+
+@media(max-width:1024px){
+    .popup{
+        .block{
+            padding: 35px;
+            max-width: 600px;
+            p{
+                font-size: 1.4rem;
+                margin-bottom: 40px;
+            }
+        }
+    }
+}
+}
+
+@media(max-width:768px){
+    .popup{
+    
+        .block{
+            max-width: 500px;
+    
+            p{
+                font-size: 1.2rem;
+                margin-bottom: 20px;
+            }
+    
+        }
+    }
+}
+
+
+@media(max-width:620px){
+    .popup{
+    
+        .block{
+            max-width: 300px;
+        }
+    }
+}
+
+@media(max-width:420px){
+    .popup{
+    
+        .block{
+            max-width: 200px;
+
+            p{
+                font-size: 1rem;
+            }
+        }
+    }
+}
