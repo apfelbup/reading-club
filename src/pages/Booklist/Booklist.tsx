@@ -6,15 +6,22 @@ import Pagination from "../../components/Pagination";
 import Book from "../../components/Book";
 import { title } from "process";
 import ActualBook from "../../components/ActualBook";
+import { useDispatch, useSelector } from "react-redux";
+import { setCurrentPage } from "../../redux/slices/pagesSlice";
+
 
 
 interface BookListProps {
-    dataState:any
+    dataState:Array<any>
 }
 const Booklist = ({dataState}:BookListProps) => {
-    const onChangePage = (number:any) =>{
-
+    
+    const dispatch = useDispatch();
+    const {currentPage} = useSelector((state:any)=> state.pages);
+    const onChangePage = (number:number) =>{
+        dispatch(setCurrentPage(number))
     }
+
     return(
     <div className={styles.booklist}>
         <div className={styles.booksBlock}>
@@ -33,7 +40,7 @@ const Booklist = ({dataState}:BookListProps) => {
             {dataState?.map((item: { id: string; theme: string; image: string; description:string; title:string }) => 
             (<Book key={item.id} title={item.title} id={item.id} theme={item.theme} image={item.image} description={item.description}/>))}
         </div>
-        <Pagination currentPage={1} onChangePage={onChangePage}/>
+        <Pagination currentPage={currentPage} onChangePage={onChangePage}/>
         <SignUp/>
     </div>
     )

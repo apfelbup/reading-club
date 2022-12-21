@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import ActualBook from "../../components/ActualBook";
 
 
-const MainPage = () => {
+const MainPage = ({dataState}:any) => {
     return(
       <div className={styles.main}>
       <h1 className={styles.mainTitle}>Здесь говорят <br/> о книгах</h1>
@@ -32,7 +32,7 @@ const MainPage = () => {
             <p>Узнать больше о клубе и участии</p>
           </Link>
       </div>
-      <ActualBook/>
+      <ActualBook />
       <Navigate/>
       <SignUp/>
       </div>

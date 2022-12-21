@@ -10,6 +10,7 @@ import Contact from './pages/Contact/Contact';
 import Popup from './components/Popup';
 import Booklist from './pages/Booklist/Booklist';
 import axios from 'axios';
+import { useSelector } from 'react-redux';
 
 function App() {
   const [isShow, setIsShow] = React.useState<boolean>(true);
@@ -17,13 +18,14 @@ function App() {
   const [popup, setPopup] = React.useState<boolean>(false);
   const [dataState, setDataState] = React.useState<any>();
 
+  const {categoryId, currentPage} = useSelector((state:any)=> state.pages);
+
   const send = useEffect(()=>{
-    axios.get('https://6375f81a7e93bcb006becc5c.mockapi.io/Books'
+    axios.get(`https://6375f81a7e93bcb006becc5c.mockapi.io/Books?page=${currentPage}&limit=8`
   ).then((res)=>{
       setDataState(res.data);
     });
-  },[setDataState]);
-  console.log(dataState);
+  },[currentPage]);
 
 
   const overflowHandler = ()=> {
@@ -52,7 +54,7 @@ function App() {
       {popup?<Popup popupHandler={popupHandler}/>:null}
       <Header menuHandler={menuHandler} menu={menu}/>
     <Routes>
-      <Route path="/" element={<MainPage/>}/>
+      <Route path="/" element={<MainPage dataState={dataState} />}/>
       <Route path="/club" element={<Club popupHandler={popupHandler}/>}/>
       <Route path="/shelf" element={<Shelf/>}/>
       <Route path="/booklist" element={<Booklist dataState={dataState} />}/>
