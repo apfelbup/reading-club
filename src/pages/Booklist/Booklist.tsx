@@ -1,10 +1,8 @@
 import React from "react";
 import styles from './booklist.module.scss';
 import SignUp from "../../components/SignUp";
-import ReactPaginate from "react-paginate";
 import Pagination from "../../components/Pagination";
 import Book from "../../components/Book";
-import { title } from "process";
 import ActualBook from "../../components/ActualBook";
 import { useDispatch, useSelector } from "react-redux";
 import { setCurrentPage } from "../../redux/slices/pagesSlice";

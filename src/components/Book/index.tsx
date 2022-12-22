@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./book.module.scss";
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addItem, removeItem } from '../../redux/slices/bookSlice';
 
 
@@ -16,6 +16,7 @@ const Book = ({ id, image, theme, description, title }: BookProps) => {
     const [addBook, setAddBook] = React.useState<boolean>(false);
     const [popup, setPopup] = React.useState<boolean>(false);
     const dispatch = useDispatch();
+    const {isActive} = useSelector((state:any)=> state.books);
 
     const onClickadd = () => {
         setAddBook(true);
@@ -24,13 +25,12 @@ const Book = ({ id, image, theme, description, title }: BookProps) => {
             image,
             description,
             title,
-            theme
+            theme,
+            isActive:addBook
         }
-        dispatch(addItem(book));
-
-
-
+            dispatch(addItem(book));
     }
+    
     const PopupHandler = () => {
         setPopup(!popup);
     }

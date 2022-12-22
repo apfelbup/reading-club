@@ -10,7 +10,6 @@ const Footer = (windowScroll:any) => {
             <ul>
                 <li><Link to ="/" onClick={() => window.scrollTo(0, 0)}>Главная страница</Link></li>
                 <li><Link to ="/booklist" onClick={() => window.scrollTo(0, 0)}>Книги</Link></li>
-                <li><Link to ="/blog" onClick={() => window.scrollTo(0, 0)}>Блог</Link></li>
             </ul>
             <ul>
                 <li><Link to ="/contact" onClick={() => window.scrollTo(0, 0)}>Контакты</Link></li>

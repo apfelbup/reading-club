@@ -26,6 +26,7 @@ function App() {
   ).then((res)=>{
       setDataState(res.data);
     });
+    console.log(dataState);
   },[currentPage]);
 
 
@@ -54,6 +55,7 @@ function App() {
   }
   return (
     <div className="app">
+
       <div onClick={overflowHandler} className={isShow?`splash`:`disabled`}>
           <div className='splash-middle'>
             <img className='splash-middle-inner' src="/img/btb-logo-inner.png" alt="image-inner" />

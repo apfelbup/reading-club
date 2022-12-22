@@ -12,10 +12,10 @@ const Navigate = () => {
             <p>Клуб, меняющий взгляд на чтение через игры, поддержку и доброе комьюнити.</p>
             </div>
         </Link>
-        <Link  onClick={() => window.scrollTo(0, 0)} to="/blog" className={styles.secondBlock}>
+        <Link  onClick={() => window.scrollTo(0, 0)} to="/contact" className={styles.secondBlock}>
         <div className={styles.navInfo}>
-        <h4>Интересности</h4>
-            <p>Окунитесь в полседние новости и рецензии в нашем блоге.</p>
+        <h4>Контакты</h4>
+            <p>Напишите нам, и мы ответим в кратчайшие сроки.</p>
         </div>
         </Link>
         <Link  onClick={() => window.scrollTo(0, 0)} to="/booklist" className={styles.thirdBlock}>

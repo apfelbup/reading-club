@@ -15,7 +15,7 @@ const Header = ({popupHandler}:HeaderProps) => {
         <nav className={styles.nav}>
         <Link className={styles.logo} to="/"><img src="./img/btb-logo-inner.png" style={{height:60}} alt="" /></Link>
             <Link to="/club">О клубе</Link>
-            <Link to="/blog">Блог</Link>
+            <Link to="/contact">Контакты</Link>
             <Link to="/booklist" className={styles.bookMenu}> Книги </Link>
 
         </nav>
